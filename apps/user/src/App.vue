@@ -1,5 +1,12 @@
 <script>
-export default {
+import { defineComponent } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+
+export default defineComponent({
+  components: {
+    RouterLink,
+    RouterView,
+  },
   name: "UserApp",
   data() {
     return {
@@ -7,7 +14,7 @@ export default {
       text: "",
     };
   },
-};
+});
 </script>
 
 
@@ -42,6 +49,13 @@ export default {
     <div>
       <input type="text" v-model="text" placeholder="bar baz" />
       {{ text }}
+    </div>
+    <div>
+      <RouterLink to="/page-1"> View Page #1 </RouterLink>
+      <RouterLink to="/page-2"> View Page #2 </RouterLink>
+    </div>
+    <div>
+      <RouterView />
     </div>
   </div>
 </template>
